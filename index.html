@@ -7,10 +7,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <title>Adam Batstone</title>
   </head>
-  <body>
-    <header class="header">
-      <div>AB</div>
-      <nav>
+  <body class="content-grid">
+    <header class="header full-width">
+      <div>AB<span>.</span></div>
+      <button id="mobile-btn" class="header__mobile-btn" aria-expanded="false">
+        <span class="sr-only">Expand mobile navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="mobile-nav" class="header__nav full-width">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -19,7 +25,7 @@
         </ul>
       </nav>
       <div>
-        <ul>
+        <ul class="header__socials">
           <li>
             <a href="https://www.linkedin.com/in/adam-batstone-5537581b5/" target="_blank"
               ><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="sr-only"> (opens in new window)</span></a
@@ -43,34 +49,33 @@
         </ul>
       </div>
     </header>
-    <body>
-      <main>
-        <section class="profile">
-          <h1>Adam Batstone</h1>
-          <img src="./assets/images/Adam_Batston-3.jpg" alt="Developer, Adam Batstone" />
-          <div class="profile__text">
-            <h3>
-              <span> <!-- Block on this span --><span aria-hidden="true">{</span>Web Developer<span aria-hidden="true">}</span></span>
-              <span> <!-- Block on this span --><span aria-hidden="true">{</span>Accessibility Specialist<span aria-hidden="true">}</span></span>
-              <span>
-                <!-- Block on this span --><span aria-hidden="true">{</span>Artist <span aria-hidden="true">&</span>& Educator<span aria-hidden="true"
-                  >}</span
-                ></span
-              >
-            </h3>
-          </div>
-        </section>
-        <section class="skills">
-          <h2>Skills</h2>
-        </section>
-        <section class="projects">
-          <h2>Projects</h2>
-        </section>
-        <section class="contact">
-          <h2>Contact</h2>
-        </section>
-      </main>
-    </body>
+
+    <main>
+      <section class="profile">
+        <h1>Adam Batstone</h1>
+        <img src="./assets/images/Adam_Batston-3.jpg" alt="Developer, Adam Batstone" />
+        <div class="profile__text">
+          <h3>
+            <span> <!-- Block on this span --><span aria-hidden="true">{</span>Web Developer<span aria-hidden="true">}</span></span>
+            <span> <!-- Block on this span --><span aria-hidden="true">{</span>Accessibility Specialist<span aria-hidden="true">}</span></span>
+            <span>
+              <!-- Block on this span --><span aria-hidden="true">{</span>Artist <span aria-hidden="true">&</span>& Educator<span aria-hidden="true"
+                >}</span
+              ></span
+            >
+          </h3>
+        </div>
+      </section>
+      <section class="skills">
+        <h2>Skills</h2>
+      </section>
+      <section class="projects">
+        <h2>Projects</h2>
+      </section>
+      <section class="contact">
+        <h2>Contact</h2>
+      </section>
+    </main>
     <footer>
       <nav>
         <ul>
@@ -106,5 +111,7 @@
         </ul>
       </div>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
