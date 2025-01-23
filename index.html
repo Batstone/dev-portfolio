@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
     <title>Adam Batstone</title>
   </head>
   <body class="content-grid">
     <header class="header full-width">
-      <div>AB<span>.</span></div>
-      <button id="mobile-btn" class="header__mobile-btn" aria-expanded="false">
+      <a class="skip-link" href="#main">Skip to main content</a>
+      <h1 class="header__logo">
+        <span aria-hidden="true">AB</span><span class="dot" aria-hidden="true">.</span><span class="sr-only">Adam Batstone - Web Developer</span>
+      </h1>
+      <button id="mobile-btn-open" class="header__mobile-btn" aria-expanded="false" aria-controls="mobile-nav">
         <span class="sr-only">Expand mobile navigation</span>
         <span></span>
         <span></span>
@@ -49,11 +53,10 @@
         </ul>
       </div>
     </header>
-
-    <main>
+    <main id="main">
       <section class="profile">
         <h1>Adam Batstone</h1>
-        <img src="./assets/images/Adam_Batston-3.jpg" alt="Developer, Adam Batstone" />
+        <img src="./assets/images/Adam_Batston-3-edit.jpg" alt="Developer, Adam Batstone" />
         <div class="profile__text">
           <h3>
             <span> <!-- Block on this span --><span aria-hidden="true">{</span>Web Developer<span aria-hidden="true">}</span></span>
