@@ -20,4 +20,24 @@ mobileButtonOpen.addEventListener("click", (e) => {
   }
 });
 
-document.addEventListener("keydown", function () {});
+document.addEventListener("keydown", function (e) {
+  const isExpanded = nav.classList.contains("active");
+  const tabCheck = e.key === "Tab";
+
+  if (tabCheck) {
+    if (document.activeElement === lastLink && isExpanded && !e.shiftKey) {
+      e.preventDefault();
+      mobileButtonOpen.focus();
+    }
+
+    if (document.activeElement === mobileButtonOpen && isExpanded && e.shiftKey) {
+      e.preventDefault();
+      lastLink.focus();
+    }
+
+    if (document.activeElement === firstLink && isExpanded && e.shiftKey) {
+      e.preventDefault();
+      mobileButtonOpen.focus();
+    }
+  }
+});
