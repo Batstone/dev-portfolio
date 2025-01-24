@@ -93,7 +93,8 @@ h6 {
 
   --primary-color: #393933;
   --primary-color-alt: #4f4f4f;
-  --secondary-color: #35961d;
+  --primary-color-dark: #262622;
+  --secondary-color: #2a8017;
   --light-color: #fcfbf0;
 }
 
@@ -165,6 +166,12 @@ body::after {
 
 a:focus {
   outline: 2px dotted var(--primary-color);
+}
+
+.socials-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--primary-color);
 }
 
 /* Header */
@@ -283,11 +290,15 @@ a:focus {
   display: grid;
   margin-block-start: 8rem;
   text-align: center;
+  justify-items: center;
 }
 
 .profile h1 {
   font-size: 3rem;
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-semi-bold);
+  text-transform: uppercase;
+  color: var(--primary-color-dark);
+  line-height: 1.2em;
 }
 
 .profile__socials {
@@ -295,26 +306,44 @@ a:focus {
   grid-template-columns: repeat(4, 4rem);
   justify-content: center;
   justify-items: center;
-  margin-block-start: 0.4rem;
-}
-
-.socials-icon {
-  width: 2rem;
-  height: 2rem;
-  fill: var(--primary-color);
+  margin-block-start: 0.7rem;
 }
 
 .profile__img {
-  width: 70%;
+  width: 40%;
   margin-inline: auto;
   margin-block-start: 2rem;
   order: 4;
 }
 
+.profile__text {
+  width: 70%;
+}
+
 .profile__text h3 {
+  font-size: 1.3rem;
+  font-weight: var(--fw-regular);
   color: var(--secondary-color);
+  text-transform: uppercase;
+  margin-block-start: 3rem;
+}
+
+.profile__text p {
   margin-block-start: 2rem;
-  font-weight: var(--fw-semi-bold);
+  text-align: left;
+}
+
+.profile__text p:nth-of-type(2) {
+  margin-block-start: 1rem;
+}
+
+.profile__resume {
+  display: inline-block;
+  color: var(--light-color);
+  background-color: var(--secondary-color);
+  text-decoration: none;
+  margin-block-start: 2rem;
+  padding-inline: 2em;
 }
 
 /* ANIMATIONS*/
