@@ -92,7 +92,7 @@ h6 {
   --fw-bold: 700;
 
   --primary-color: #393933;
-  --primary-color-alt: #4f4f4f;
+  --primary-color-alt: #2e2e2e;
   --primary-color-dark: #262622;
   --secondary-color: #2a8017;
   --light-color: #fcfbf0;
@@ -108,7 +108,7 @@ img {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--primary-color-alt);
   font-family: var(--primary-font);
 }
@@ -141,6 +141,10 @@ body::after {
   background-position: right;
   transform: rotate(185deg);
   animation: rotate 100s infinite;
+}
+
+p {
+  font-size: 1.1rem;
 }
 
 .content-grid {
@@ -288,9 +292,21 @@ a:focus {
 
 .profile {
   display: grid;
-  margin-block-start: 8rem;
+  margin-block-start: 1.5rem;
   text-align: center;
   justify-items: center;
+  position: relative;
+}
+
+.profile::before {
+  display: block;
+  content: "";
+  width: 120%;
+  height: 100px;
+  position: relative;
+  top: 51.5rem;
+  background: linear-gradient(to top, rgba(114, 114, 114, 0.13), #00000000);
+  z-index: 98;
 }
 
 .profile h1 {
@@ -310,14 +326,16 @@ a:focus {
 }
 
 .profile__img {
-  width: 40%;
+  position: relative;
+  z-index: 99;
+  width: 50%;
   margin-inline: auto;
-  margin-block-start: 2rem;
+  margin-block-start: 3.2rem;
   order: 4;
 }
 
 .profile__text {
-  width: 70%;
+  width: 85%;
 }
 
 .profile__text h3 {
@@ -325,11 +343,11 @@ a:focus {
   font-weight: var(--fw-regular);
   color: var(--secondary-color);
   text-transform: uppercase;
-  margin-block-start: 3rem;
+  margin-block-start: 1.8rem;
 }
 
 .profile__text p {
-  margin-block-start: 2rem;
+  margin-block-start: 3.2rem;
   text-align: left;
 }
 
@@ -342,8 +360,9 @@ a:focus {
   color: var(--light-color);
   background-color: var(--secondary-color);
   text-decoration: none;
-  margin-block-start: 2rem;
+  margin-block-start: 3rem;
   padding-inline: 2em;
+  padding-block: 0.8em;
 }
 
 /* ANIMATIONS*/
