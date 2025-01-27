@@ -221,6 +221,20 @@ a:focus {
   padding-block: 0.8em;
 }
 
+.logo {
+  font-size: 3rem;
+  font-weight: var(--fw-regular);
+  font-family: var(--secondary-font);
+}
+
+.dot {
+  font-size: 5.6rem;
+  line-height: 1rem;
+  color: #35961d;
+  -webkit-animation: color-shift 1.5s infinite;
+  animation: color-shift 1.5s infinite;
+}
+
 /* Header */
 
 .skip-link {
@@ -242,17 +256,6 @@ a:focus {
 .header__logo {
   position: relative;
   top: 0.5rem;
-  font-size: 3rem;
-  font-weight: var(--fw-regular);
-  font-family: var(--secondary-font);
-}
-
-.header__logo .dot {
-  font-size: 5.6rem;
-  line-height: 1rem;
-  color: #35961d;
-  -webkit-animation: color-shift 1.5s infinite;
-  animation: color-shift 1.5s infinite;
 }
 
 .header__mobile-btn {
@@ -493,6 +496,39 @@ a:focus {
 .contact__text {
   margin-block-start: 6rem;
   text-align: center;
+}
+/* Footer */
+
+.footer {
+  margin-block-start: 6rem;
+  background-color: var(--primary-color);
+}
+
+.footer nav ul {
+  display: grid;
+  justify-items: center;
+  gap: 2.8rem;
+  margin-block-start: 5rem;
+}
+
+.footer a {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.footer__logo {
+  margin-block-start: 3rem;
+  text-align: center;
+  color: var(--light-color);
+}
+
+.footer__socials {
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  justify-content: center;
+  justify-items: center;
+  margin-block-start: 1.5rem;
+  margin-block-end: 2.5rem;
 }
 
 /* ANIMATIONS*/
