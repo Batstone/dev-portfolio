@@ -488,6 +488,13 @@ a:focus {
   max-width: 120%;
 }
 
+/* Contact */
+
+.contact__text {
+  margin-block-start: 6rem;
+  text-align: center;
+}
+
 /* ANIMATIONS*/
 
 @-webkit-keyframes color-shift {
