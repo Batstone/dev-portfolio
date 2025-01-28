@@ -100,6 +100,8 @@ h6 {
   --primary-color-dark: #262622;
   --secondary-color: #2a8017;
   --light-color: #fcfbf0;
+  --light-accent-color: #dbb32f;
+  --dark-color: #000;
 }
 
 ul {
@@ -215,13 +217,19 @@ a:focus {
 
 .link-btn {
   display: inline-block;
+  line-height: 0;
   color: var(--light-color);
   background-color: var(--secondary-color);
   text-decoration: none;
   padding-inline: 2em;
-  padding-block: 0.8em;
+  padding-block: 1.5em;
 }
 
+.link-btn:hover,
+.link-btn:focus {
+  color: var(--light-color);
+  background-color: var(--primary-color-dark);
+}
 .logo {
   font-size: 2.6rem;
   font-weight: var(--fw-regular);
@@ -261,7 +269,7 @@ a:focus {
 
 .header__mobile-btn {
   position: absolute;
-  z-index: 99;
+  z-index: 100;
   right: 2rem;
   top: -0.9rem;
   width: 3.125rem;
@@ -307,10 +315,11 @@ a:focus {
   text-align: center;
   background: rgba(59, 53, 53, 0.24);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(15.9px);
+  backdrop-filter: blur(1.2rem);
   -webkit-backdrop-filter: blur(15.9px);
   border: 1px solid rgba(59, 53, 53, 0.03);
   transition: top 0.3s ease-in-out;
+  z-index: 99;
 }
 
 .header__nav.active {
@@ -327,7 +336,7 @@ a:focus {
 }
 
 .header__nav a {
-  color: var(--primary-color);
+  color: var(--primary-color-dark);
   text-decoration: none;
 }
 
@@ -482,12 +491,14 @@ a:focus {
   gap: 1.2rem;
 }
 
-.projects__links a {
-  background-color: var(--primary-color);
+.btn-2 {
+  color: var(--primary-color-dark);
+  background: transparent;
+  border: 2px solid var(--primary-color-dark);
 }
 
 .projects__img {
-  margin-block-start: 2rem;
+  margin-block-start: 3.5rem;
   max-width: 120%;
 }
 
@@ -529,6 +540,17 @@ a:focus {
   justify-items: center;
   margin-block-start: 2rem;
   margin-block-end: 2.5rem;
+}
+
+.footer__credits {
+  background-color: var(--dark-color);
+  text-align: center;
+  color: var(--light-color);
+  padding-block: 1em;
+}
+
+.footer__credits p {
+  font-size: 0.8rem;
 }
 
 /* ANIMATIONS*/
