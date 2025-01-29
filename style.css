@@ -218,6 +218,15 @@ nav a:focus {
   height: 2rem;
 }
 
+.socials-link svg {
+  transition: transform 0.1s ease-in-out;
+}
+
+.socials-link:hover svg,
+.socials-link:focus svg {
+  transform: scale(1.2);
+}
+
 .link-btn {
   display: inline-block;
   line-height: 0;
@@ -393,6 +402,15 @@ nav a:focus {
   margin-block-start: 0.7rem;
 }
 
+.profile__socials svg {
+  fill: var(--primary-color-alt);
+}
+
+.profile__socials .socials-link:hover svg,
+.profile__socials .socials-link:focus svg {
+  fill: var(--secondary-color);
+}
+
 .profile__img {
   position: relative;
   z-index: 99;
@@ -551,11 +569,15 @@ nav a:focus {
   margin-block-end: 2.5rem;
 }
 
+.footer__socials svg {
+  fill: var(--light-color);
+}
+
 .footer__socials a:focus {
   outline: 2px dotted var(--light-color);
 }
 
-.footer__credits {
+.footer__socials .footer__credits {
   background-color: var(--dark-color);
   text-align: center;
   color: var(--light-color);
@@ -634,3 +656,7 @@ nav a:focus {
 }
 
 */
+
+svg {
+  fill: red;
+}
