@@ -289,6 +289,10 @@ nav a:focus {
   cursor: pointer;
   background-color: transparent;
   border: none;
+
+  @media (min-width: 48rem) {
+    display: none;
+  }
 }
 
 .header__mobile-btn span {
