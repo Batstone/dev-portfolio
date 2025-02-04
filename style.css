@@ -277,6 +277,10 @@ nav a:focus {
 .header__logo {
   position: relative;
   top: 0.5rem;
+
+  @media (min-width: 48rem) {
+    top: 1.5rem;
+  }
 }
 
 .header__mobile-btn {
@@ -336,6 +340,11 @@ nav a:focus {
   background-color: var(--primary-color-alt);
   transition: top 0.3s ease-in-out;
   z-index: 99;
+
+  @media (min-width: 48rem) {
+    top: 2.6rem;
+    background-color: transparent;
+  }
 }
 
 .header__nav.active {
@@ -346,6 +355,16 @@ nav a:focus {
   display: none;
   padding-block-start: 4rem;
   padding-block-end: 3rem;
+  width: 100%;
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-items: end;
+    width: 50%;
+    margin-inline-start: auto;
+    padding-block: 0;
+  }
 }
 
 .header__nav.active ul {
@@ -359,15 +378,14 @@ nav a:focus {
 .header__nav a {
   color: var(--primary-color-dark);
   text-decoration: none;
+  @media (min-width: 48rem) {
+    font-size: 1.1rem;
+  }
 }
 
 .header__nav.active a {
   color: var(--light-color);
   text-decoration: none;
-}
-
-.header__socials {
-  display: none;
 }
 
 /* Profile */
@@ -378,6 +396,10 @@ nav a:focus {
   text-align: center;
   justify-items: center;
   position: relative;
+
+  @media (min-width: 48rem) {
+    margin-block-start: 9rem;
+  }
 }
 
 .profile::after {
@@ -404,6 +426,13 @@ nav a:focus {
   justify-content: center;
   justify-items: center;
   margin-block-start: 0.7rem;
+
+  @media (min-width: 48rem) {
+    position: absolute;
+    top: -7rem;
+    right: 0;
+    justify-items: end;
+  }
 }
 
 .profile__socials svg {
