@@ -398,7 +398,8 @@ nav a:focus {
   position: relative;
 
   @media (min-width: 48rem) {
-    margin-block-start: 9rem;
+    margin-block-start: 17rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -411,6 +412,14 @@ nav a:focus {
   bottom: 0;
   background: linear-gradient(to top, rgba(114, 114, 114, 0.13), #00000000);
   z-index: 98;
+
+  @media (min-width: 48rem) {
+    position: absolute;
+    height: 120%;
+    top: -10%;
+    left: 20%;
+    background: linear-gradient(to right, rgba(114, 114, 114, 0.13), #00000000);
+  }
 }
 
 .profile h1 {
@@ -429,7 +438,7 @@ nav a:focus {
 
   @media (min-width: 48rem) {
     position: absolute;
-    top: -7rem;
+    top: -15.5rem;
     right: 0;
     justify-items: end;
   }
@@ -451,6 +460,19 @@ nav a:focus {
   margin-inline: auto;
   margin-block-start: 3.2rem;
   order: 4;
+
+  @media (min-width: 48rem) {
+    order: 0;
+    width: 65%;
+    margin-block-start: 0;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 48rem) {
+  .profile__text {
+    text-align: left;
+  }
 }
 
 .profile__text h2 {
@@ -459,11 +481,19 @@ nav a:focus {
   color: var(--secondary-color);
   text-transform: uppercase;
   margin-block-start: 1.8rem;
+
+  @media (min-width: 48rem) {
+    margin-block-start: 0.5rem;
+  }
 }
 
 .profile__text p {
   margin-block-start: 3.2rem;
   text-align: left;
+
+  @media (min-width: 48rem) {
+    margin-block-start: 2rem;
+  }
 }
 
 .profile__text p:nth-of-type(2) {
