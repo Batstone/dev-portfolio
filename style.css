@@ -95,6 +95,7 @@ h6 {
   --fw-600: 600;
   --fw-700: 700;
 
+  /* Light theme custom properties */
   --primary-color: #5e5e56;
   --primary-color-alt: #2e2e2e;
   --primary-color-dark: #262622;
@@ -102,6 +103,25 @@ h6 {
   --light-color: #fcfbf0;
   --light-accent-color: #dbb32f;
   --dark-color: #000;
+
+  --bg: url("./assets/images/light-bg.jpg");
+}
+
+html {
+  color-scheme: dark light;
+}
+
+[data-theme="dark"] {
+  /* Dark theme custom properties */
+  --primary-color: #5e5e56;
+  --primary-color-alt: #2e2e2e;
+  --primary-color-dark: #262622;
+  --secondary-color: #2a8017;
+  --light-color: #fcfbf0;
+  --light-accent-color: #dbb32f;
+  --dark-color: #000;
+
+  --bg: url("./assets/images/dark-bg.jpg");
 }
 
 ul {
@@ -137,9 +157,8 @@ body::after {
   content: "";
   z-index: -10;
   bottom: 0%;
-  background: -webkit-gradient(linear, left bottom, left top, from(white), color-stop(rgba(255, 255, 255, 0.63)), to(white)),
-    url(../../assets/images/3440061.jpg) center;
-  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.63), white), url(../../assets/images/3440061.jpg) center;
+  background: -webkit-gradient(linear, left bottom, left top, from(white), color-stop(rgba(255, 255, 255, 0.63)), to(white)), var(--bg) center;
+  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.63), white), var(--bg) center;
   background-size: cover;
   background-position: right;
 }
@@ -519,7 +538,7 @@ nav a:hover {
 /* Skills */
 
 .skills {
-  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.651), white), url(../../assets/images/3440061.jpg);
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.651), white), var(--bg);
   background-position: bottom right;
 }
 
@@ -553,7 +572,7 @@ nav a:hover {
 /* Projects */
 
 .projects {
-  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.651), white), url(../../assets/images/3440061.jpg);
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.651), white), var(--bg);
   background-position: top center;
 }
 
