@@ -104,6 +104,12 @@ h6 {
   --light-accent-color: #dbb32f;
   --dark-color: #000;
 
+  --header-fill: #fff;
+  --footer-fill: #000;
+
+  --body-bg: linear-gradient(to top, white, rgba(255, 255, 255, 0.63), white), var(--bg) center;
+  --profile-bg: linear-gradient(to top, rgba(114, 114, 114, 0.13), #00000000);
+
   --bg: url("./assets/images/light-bg.jpg");
 }
 
@@ -113,13 +119,18 @@ html {
 
 [data-theme="dark"] {
   /* Dark theme custom properties */
-  --primary-color: #5e5e56;
-  --primary-color-alt: #2e2e2e;
-  --primary-color-dark: #262622;
-  --secondary-color: #2a8017;
+  --primary-color: #ffffff;
+  --primary-color-alt: #ffffff;
+  --primary-color-dark: #ffffff;
+  --secondary-color: #00ac1c;
   --light-color: #fcfbf0;
   --light-accent-color: #dbb32f;
   --dark-color: #000;
+
+  --header-fill: #000;
+  --footer-fill: #fff;
+
+  --body-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0.224), rgba(0, 0, 0, 0.654)), var(--bg) center/cover no-repeat;
 
   --bg: url("./assets/images/dark-bg.jpg");
 }
@@ -151,16 +162,15 @@ body::before {
 
 body::after {
   z-index: -1;
-  width: 150vw;
-  height: 150vh;
+  width: 100vw;
+  height: 100%;
   position: absolute;
   content: "";
   z-index: -10;
-  bottom: 0%;
-  background: -webkit-gradient(linear, left bottom, left top, from(white), color-stop(rgba(255, 255, 255, 0.63)), to(white)), var(--bg) center;
-  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.63), white), var(--bg) center;
+  background: var(--body-bg);
   background-size: cover;
-  background-position: right;
+  background-repeat: repeat;
+  background-position: 20%;
 }
 
 .content-grid {
@@ -192,6 +202,31 @@ a:focus {
   outline: 2px dotted var(--primary-color);
 }
 
+nav li {
+  position: relative;
+}
+
+nav a {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.113rem;
+  transition: 0.2s;
+}
+
+nav a::before {
+  display: block;
+  content: "";
+  position: absolute;
+  font-size: 7rem;
+  background-color: #35961d;
+  animation: background-color-shift 1.5s infinite;
+  width: 0.625rem;
+  height: 0.625rem;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 10;
+}
+
 nav a:focus {
   outline: 2px dotted var(--light-color);
   text-decoration: underline;
@@ -199,6 +234,10 @@ nav a:focus {
   @media (min-width: 48rem) {
     outline: 2px dotted var(--dark-color);
   }
+}
+
+nav a:hover {
+  transform: scale(1.1);
 }
 
 .sub-title {
@@ -248,6 +287,14 @@ nav a:focus {
 .socials-link:hover svg,
 .socials-link:focus svg {
   transform: scale(1.2);
+}
+
+.profile__socials .socials-link .linkedIn g path:nth-of-type(2) {
+  fill: var(--header-fill);
+}
+
+.footer__socials .socials-link .linkedIn g path:nth-of-type(2) {
+  fill: var(--footer-fill);
 }
 
 .link-btn {
@@ -306,7 +353,7 @@ nav a:hover {
   top: 0.5rem;
 
   @media (min-width: 48rem) {
-    top: 1.5rem;
+    top: 2.4rem;
   }
 }
 
@@ -369,7 +416,7 @@ nav a:hover {
   z-index: 99;
 
   @media (min-width: 48rem) {
-    top: 2.6rem;
+    top: 4rem;
     background-color: transparent;
   }
 }
@@ -388,7 +435,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-items: end;
-    width: 50%;
+    width: 63%;
     margin-inline-start: auto;
     padding-block: 0;
   }
@@ -415,6 +462,16 @@ nav a:hover {
   text-decoration: none;
 }
 
+.header__theme {
+  width: 10%;
+  position: absolute;
+  top: 8%;
+  right: 30%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 /* Profile */
 
 .profile {
@@ -439,7 +496,7 @@ nav a:hover {
   height: 50px;
   position: relative;
   bottom: 0;
-  background: linear-gradient(to top, rgba(114, 114, 114, 0.13), #00000000);
+  background: var(--profile-bg);
   z-index: -1;
 
   @media (min-width: 48rem) {
@@ -467,9 +524,10 @@ nav a:hover {
 
   @media (min-width: 48rem) {
     position: absolute;
-    top: -15.5rem;
-    right: 0;
+    top: -14.5rem;
+    right: 0.3rem;
     justify-items: end;
+    gap: 0.5rem;
   }
 }
 
@@ -537,11 +595,6 @@ nav a:hover {
 
 /* Skills */
 
-.skills {
-  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.651), white), var(--bg);
-  background-position: bottom right;
-}
-
 .skills__list {
   max-width: 60rem;
   margin-block-start: 6rem;
@@ -570,11 +623,6 @@ nav a:hover {
 }
 
 /* Projects */
-
-.projects {
-  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.651), white), var(--bg);
-  background-position: top center;
-}
 
 .projects__list {
   margin-block-start: 6rem;
@@ -802,24 +850,24 @@ nav a:hover {
     color: #208307;
   }
 }
-@keyframes color-shift {
+@keyframes background-color-shift {
   0% {
-    color: #208307;
+    background-color: #208307;
   }
   20% {
-    color: #5dc742;
+    background-color: #5dc742;
   }
   40% {
-    color: #92f579;
+    background-color: #92f579;
   }
   60% {
-    color: #5dc742;
+    background-color: #5dc742;
   }
   80% {
-    color: #5bb445;
+    background-color: #5bb445;
   }
   100% {
-    color: #208307;
+    background-color: #208307;
   }
 }
 
