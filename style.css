@@ -214,30 +214,30 @@ nav a {
 }
 
 nav a::before {
-  display: block;
+  display: none;
   content: "";
   position: absolute;
-  font-size: 7rem;
   background-color: #35961d;
   animation: background-color-shift 1.5s infinite;
   width: 0.625rem;
   height: 0.625rem;
-  bottom: 2rem;
+  bottom: 2.5rem;
   left: 50%;
-  z-index: 10;
+  transform: translateX(-50%);
+  border-radius: 50%;
 }
 
 nav a:focus {
   outline: 2px dotted var(--light-color);
   text-decoration: underline;
-
-  @media (min-width: 48rem) {
-    outline: 2px dotted var(--dark-color);
-  }
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   transform: scale(1.1);
+  &::before {
+    display: block;
+  }
 }
 
 .sub-title {
@@ -319,7 +319,7 @@ nav a:hover {
 }
 
 .dot {
-  font-size: 5rem;
+  font-size: 5.7rem;
   line-height: 1rem;
   color: #35961d;
   -webkit-animation: color-shift 1.5s infinite;
@@ -331,6 +331,10 @@ nav a:hover {
 }
 
 /* Header */
+
+.header {
+  position: relative;
+}
 
 .skip-link {
   position: absolute;
@@ -452,8 +456,12 @@ nav a:hover {
 .header__nav a {
   color: var(--primary-color-dark);
   text-decoration: none;
+
   @media (min-width: 48rem) {
     font-size: 1.1rem;
+    &:focus {
+      outline: 2px dotted var(--dark-color);
+    }
   }
 }
 
@@ -463,13 +471,33 @@ nav a:hover {
 }
 
 .header__theme {
-  width: 10%;
   position: absolute;
-  top: 8%;
-  right: 30%;
+  width: 2.8rem;
+  height: 2.8rem;
+  bottom: -150%;
+  left: 0.6rem;
+  background: transparent;
+  border: none;
+  transition: 0.2s;
   &:hover {
     cursor: pointer;
   }
+  svg {
+    height: 100%;
+  }
+}
+
+html[data-theme="dark"] .header__theme svg:first-of-type {
+  display: none;
+}
+
+html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
+  display: none;
+}
+
+.header__theme:focus,
+.header__theme:hover {
+  transform: scale(1.2);
 }
 
 /* Profile */
@@ -524,7 +552,7 @@ nav a:hover {
 
   @media (min-width: 48rem) {
     position: absolute;
-    top: -14.5rem;
+    top: -13.5rem;
     right: 0.3rem;
     justify-items: end;
     gap: 0.5rem;
@@ -830,26 +858,6 @@ nav a:hover {
 
 /* ANIMATIONS*/
 
-@-webkit-keyframes color-shift {
-  0% {
-    color: #208307;
-  }
-  20% {
-    color: #5dc742;
-  }
-  40% {
-    color: #92f579;
-  }
-  60% {
-    color: #5dc742;
-  }
-  80% {
-    color: #5bb445;
-  }
-  100% {
-    color: #208307;
-  }
-}
 @keyframes background-color-shift {
   0% {
     background-color: #208307;
