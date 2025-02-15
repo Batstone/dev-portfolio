@@ -111,6 +111,7 @@ h6 {
   --profile-bg: linear-gradient(to top, rgba(114, 114, 114, 0.13), #00000000);
 
   --bg: url("./assets/images/light-bg.jpg");
+  --bg-blur: rgba(255, 255, 255, 0.612);
 }
 
 html {
@@ -133,6 +134,7 @@ html {
   --body-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0.224), rgba(0, 0, 0, 0.654)), var(--bg) center/cover no-repeat;
 
   --bg: url("./assets/images/dark-bg.jpg");
+  --bg-blur: rgba(255, 255, 255, 0.004);
 }
 
 ul {
@@ -148,30 +150,31 @@ body {
   overflow-x: hidden;
   color: var(--primary-color-alt);
   font-family: var(--primary-font);
+  background-image: var(--bg);
+  max-height: 4000px;
 }
 
 body::before {
-  width: 150vw;
-  height: 150vh;
-  position: absolute;
   content: "";
-  z-index: -1;
   position: absolute;
-  background: rgba(255, 255, 255, 0.021);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--bg-blur);
 }
 
+/*
 body::after {
   z-index: -1;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   content: "";
   z-index: -10;
   background: var(--body-bg);
-  background-size: cover;
-  background-repeat: repeat;
   background-position: 20%;
 }
+  */
 
 .content-grid {
   --_padding-inline: 3rem;
@@ -472,8 +475,8 @@ nav a:hover {
 
 .header__theme {
   position: absolute;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
   bottom: -150%;
   left: 0.6rem;
   background: transparent;
@@ -484,6 +487,10 @@ nav a:hover {
   }
   svg {
     height: 100%;
+  }
+
+  @media (max-width: 48rem) {
+    bottom: -75%;
   }
 }
 
@@ -742,6 +749,14 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
   }
 }
 
+html[data-theme="dark"] .projects__logo .projects__light {
+  display: none;
+}
+
+html[data-theme="light"] .projects__logo .projects__dark {
+  display: none;
+}
+
 .projects__stack {
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -800,7 +815,7 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 /* Footer */
 
 .footer {
-  margin-block-start: 6rem;
+  margin-block-start: 8rem;
   background-color: var(--primary-color-alt);
 }
 
@@ -904,7 +919,3 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 }
 
 */
-
-svg {
-  fill: red;
-}
