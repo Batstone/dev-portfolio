@@ -107,8 +107,8 @@ h6 {
 
   --background-footer: #2e2e2e;
 
-  --primary-focus: 2px dotted var(--color-primary-dark);
-  --secondary-focus: 2px dotted var(--color-primary-light);
+  --primary-focus: 0.125rem dotted var(--color-primary-dark);
+  --secondary-focus: 0.125rem dotted var(--color-primary-light);
 
   --background-body: linear-gradient(to top, white, rgba(255, 255, 255, 0.63), white), var(--bg) center;
   --background-profile: linear-gradient(to top, rgba(114, 114, 114, 0.13), #00000000);
@@ -129,12 +129,10 @@ html {
   --color-primary-light: #fcfbf0;
   --color-inverted-nav: #262622;
 
-  --primary-focus: 2px dotted #fcfbf0;
-  --secondary-focus: 2px dotted #262622;
+  --primary-focus: 0.125rem dotted var(--color-primary-light);
+  --secondary-focus: 0.125rem dotted var(--color-inverted-nav);
 
   --header-fill: var(--color-inverted-nav);
-
-  --body-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0.224), rgba(0, 0, 0, 0.654)), var(--bg) center/cover no-repeat;
 
   --background-image: url("./assets/images/dark-bg.jpg");
   --background-blur: rgba(255, 255, 255, 0.004);
@@ -150,42 +148,41 @@ img {
 }
 
 body {
+  min-height: 100%;
+  height: auto;
+}
+
+body {
+  position: relative;
   overflow-x: hidden;
   color: var(--color-primary);
   font-family: var(--primary-font);
   background-image: var(--background-image);
-  max-height: 4000px;
+  background-size: 650%;
+  background-position: right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  @media (min-width: 48rem) {
+    background-size: 300%;
+  }
 }
 
 body::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* This makes it cover the full height of body */
+  min-height: 100vh; /* Ensures it at least covers the viewport */
   z-index: -1;
   background: var(--background-blur);
 }
 
-body a:focus {
-  outline: var(--primary-focus);
-}
-
-/*
-body::after {
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  content: "";
-  z-index: -10;
-  background: var(--body-bg);
-  background-position: 20%;
-}
-  */
-
 .content-grid {
   --_padding-inline: 3rem;
-  --_content-max-size: 1200px;
+  --_content-max-size: 75rem;
 
   display: grid;
   grid-template-columns:
@@ -209,7 +206,7 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px dotted var(color-primary);
+  outline: var(--primary-focus);
 }
 
 nav li {
@@ -252,7 +249,7 @@ nav a:focus {
 
 .sub-title {
   position: relative;
-  margin-block-start: 10rem;
+  margin-block-start: 13rem;
   text-align: center;
   text-transform: uppercase;
   font-family: var(--secondary-font);
@@ -525,7 +522,7 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 
 .profile {
   display: grid;
-  margin-block-start: 6rem;
+  margin-block-start: 10rem;
   text-align: center;
   justify-items: center;
   position: relative;
@@ -542,7 +539,7 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
   display: block;
   content: "";
   width: 150%;
-  height: 50px;
+  height: 3.125rem;
   position: relative;
   bottom: 0;
   background: var(--background-profile);
@@ -592,14 +589,14 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 .profile__img {
   position: relative;
   z-index: 99;
-  width: 50%;
+  width: 65%;
+  max-width: 20rem;
   margin-inline: auto;
   margin-block-start: 3.2rem;
   order: 4;
 
   @media (min-width: 48rem) {
     order: 0;
-    width: 65%;
     margin-block-start: 0;
     margin-left: auto;
     position: relative;
@@ -646,9 +643,9 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 
 .skills__list {
   max-width: 60rem;
-  margin-block-start: 6rem;
+  margin-block-start: 8rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 170px));
+  grid-template-columns: repeat(auto-fit, minmax(6.25rem, 10.625rem));
   justify-content: center;
   gap: 3rem;
 
@@ -678,7 +675,7 @@ html[data-theme="dark"] .skills__item .nextjs {
 /* Projects */
 
 .projects__list {
-  margin-block-start: 6rem;
+  margin-block-start: 8rem;
 }
 
 .projects__list .projects__item:nth-child(2n) {
@@ -758,7 +755,7 @@ html[data-theme="dark"] .skills__item .nextjs {
 .projects__logo {
   margin-block-start: 3rem;
   margin-inline: auto;
-  max-width: 50%;
+  max-width: 65%;
   font-size: 1.8rem;
 
   @media (min-width: 48rem) {
@@ -821,13 +818,13 @@ html[data-theme="light"] .projects__logo .projects__dark {
 .btn-2 {
   color: var(--color-primary-dark);
   background: transparent;
-  border: 2px solid var(--color-primary-dark);
+  border: 0.125rem solid var(--color-primary-dark);
 }
 
 /* Contact */
 
 .contact__text {
-  margin-block-start: 6rem;
+  margin-block-start: 8rem;
   text-align: center;
   a {
     color: var(--color-accent);
@@ -878,7 +875,7 @@ html[data-theme="light"] .projects__logo .projects__dark {
 }
 
 .footer__socials a:focus {
-  outline: 2px dotted var(--color-primary-light);
+  outline: var(--secondary-focus);
 }
 
 .footer__credits {
