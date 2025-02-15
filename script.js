@@ -4,6 +4,28 @@ const nav = document.querySelector("#mobile-nav");
 const screenReaderText = mobileButtonOpen.querySelector(".sr-only");
 const firstLink = nav.querySelector("ul li:first-child a");
 const lastLink = nav.querySelector("ul li:last-child a");
+const themeSwitch = document.querySelector("#theme-switch");
+document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+    else {
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    }
+});
+themeSwitch.addEventListener("click", function () {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    if (currentTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
+    else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+    }
+});
 mobileButtonOpen.addEventListener("click", (e) => {
     e.preventDefault();
     mobileButtonOpen.classList.toggle("active");
@@ -18,6 +40,7 @@ mobileButtonOpen.addEventListener("click", (e) => {
 document.addEventListener("keydown", function (e) {
     const isExpanded = nav.classList.contains("active");
     const tabCheck = e.key === "Tab";
+    const escCheck = e.key === "Escape";
     if (tabCheck) {
         if (document.activeElement === lastLink && isExpanded && !e.shiftKey) {
             e.preventDefault();
@@ -31,5 +54,9 @@ document.addEventListener("keydown", function (e) {
             e.preventDefault();
             mobileButtonOpen.focus();
         }
+    }
+    if (escCheck && isExpanded) {
+        mobileButtonOpen.click();
+        mobileButtonOpen.focus();
     }
 });
