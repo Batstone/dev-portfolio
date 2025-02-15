@@ -471,8 +471,10 @@ nav a:hover {
 }
 
 .header__nav a {
-  outline: var(--secondary-focus);
   text-decoration: none;
+  &:focus {
+    outline: var(--secondary-focus);
+  }
 
   @media (min-width: 48rem) {
     font-size: 1.1rem;

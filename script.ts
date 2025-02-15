@@ -47,6 +47,7 @@ mobileButtonOpen.addEventListener("click", (e) => {
 document.addEventListener("keydown", function (e) {
   const isExpanded = nav.classList.contains("active");
   const tabCheck = e.key === "Tab";
+  const escCheck = e.key === "Escape";
 
   if (tabCheck) {
     if (document.activeElement === lastLink && isExpanded && !e.shiftKey) {
@@ -63,5 +64,10 @@ document.addEventListener("keydown", function (e) {
       e.preventDefault();
       mobileButtonOpen.focus();
     }
+  }
+
+  if (escCheck && isExpanded) {
+    mobileButtonOpen.click();
+    mobileButtonOpen.focus();
   }
 });
