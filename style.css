@@ -119,6 +119,7 @@ h6 {
 
 html {
   color-scheme: dark light;
+  overflow-x: hidden;
 }
 
 [data-theme="dark"] {
@@ -373,7 +374,7 @@ nav a:hover {
 .header__mobile-btn {
   position: absolute;
   z-index: 100;
-  right: 2rem;
+  right: 0;
   width: 3.125rem;
   margin-block-start: 1.8rem;
   cursor: pointer;
@@ -536,11 +537,11 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 }
 
 .profile::after {
+  position: relative;
   display: block;
   content: "";
   width: 150%;
   height: 3.125rem;
-  position: relative;
   bottom: 0;
   background: var(--background-profile);
   z-index: -1;
