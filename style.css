@@ -756,6 +756,10 @@ html[data-theme="dark"] .skills__item .nextjs {
   max-width: 65%;
   font-size: 1.8rem;
 
+  img {
+    margin-inline: auto;
+  }
+
   @media (min-width: 48rem) {
     margin-inline: auto 0;
     margin-block-start: 0;
