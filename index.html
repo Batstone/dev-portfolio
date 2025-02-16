@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
-    <title>Adam Batstone</title>
+    <title>Adam Batstone - Developer</title>
   </head>
   <body class="content-grid">
     <header class="header full-width">
@@ -71,7 +72,6 @@
             />
           </g>
         </svg>
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -246,7 +246,7 @@
       </button>
     </header>
     <main id="main" class="full-width">
-      <section class="profile">
+      <section class="profile" data-aos="fade-left">
         <img class="profile__img" src="./assets/images/Adam_Batston-3-edit.jpg" alt="Developer, Adam Batstone" />
         <div class="profile__text text">
           <h1>Adam Batstone</h1>
@@ -536,7 +536,7 @@
       <section id="projects" class="projects full-width">
         <h2 class="sub-title">Projects</h2>
         <ul class="projects__list full-width">
-          <li class="projects__item">
+          <li class="projects__item" data-aos="fade-right">
             <div class="projects__text">
               <h3 class="projects__logo">
                 <span class="sr-only">Mixologie</span><img src="./assets/images/mixologie-logo.png" alt="Logo for the Mixologie application" />
@@ -557,7 +557,7 @@
             </div>
             <img class="projects__img" src="./assets/images/mixologie.JPG" alt="The stylish and sleek main page of the Guita Chords application" />
           </li>
-          <li class="projects__item">
+          <li class="projects__item" data-aos="fade-left">
             <div class="projects__text">
               <h3 class="projects__logo">
                 <span class="sr-only">Mixologie</span
@@ -592,7 +592,7 @@
               alt="The stylish and sleek main page of the Guitar Chords application"
             />
           </li>
-          <li class="projects__item">
+          <li class="projects__item" data-aos="fade-right">
             <div class="projects__text">
               <h3 class="projects__logo">Artist Site</h3>
               <p class="projects__stack">html | css | javascript</p>
@@ -685,5 +685,9 @@
     </footer>
 
     <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
