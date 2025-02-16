@@ -537,12 +537,9 @@ html[data-theme="light"] .header__theme svg:nth-of-type(2n) {
 }
 
 .profile::after {
-  position: relative;
-  display: block;
   content: "";
   width: 150%;
   height: 3.125rem;
-  bottom: 0;
   background: var(--background-profile);
   z-index: -1;
 
@@ -804,9 +801,8 @@ html[data-theme="light"] .projects__logo .projects__dark {
 
 .projects__img {
   margin-block-start: 3.5rem;
-  max-width: 130%;
-  position: relative;
-  left: -15%;
+  margin-inline: auto;
+  max-width: 100%;
 
   @media (min-width: 48rem) {
     z-index: 10;
